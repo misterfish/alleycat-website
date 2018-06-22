@@ -1,3 +1,0 @@
-open 95.211.13.68
-user alleycatcc
-mirror --reverse --verbose build httpdocs
