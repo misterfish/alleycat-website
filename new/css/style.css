@@ -448,6 +448,15 @@ span, a, a:hover {
   z-index: 1;
 }
 
+.hero {
+  /* height: calc(100vh + 240px);*/
+  height: 100vh;
+  /*
+  background-size: 100%;
+  */
+  overflow-y: hidden;
+}
+
 .hero .intro h3 {
   margin-bottom: 10px;
 }
@@ -728,6 +737,18 @@ span, a, a:hover {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   z-index: -1;
+}
+
+.divider {
+  height: 100vh;
+  background-size: 100%;
+  overflow-y: hidden;
+}
+
+.services {
+  height: 100vh;
+  background-size: 100%;
+  overflow-y: hidden;
 }
 
 .services .item {
