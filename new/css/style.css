@@ -745,6 +745,10 @@ span, a, a:hover {
   overflow-y: hidden;
 }
 
+.divider1 {
+    height: 50vh !important;
+}
+
 .services {
   height: 100vh;
   background-size: 100%;
