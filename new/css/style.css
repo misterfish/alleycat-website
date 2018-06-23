@@ -1,3 +1,45 @@
+.u-border-green {
+    border: 1px solid green;
+}
+
+.u-width-15 {
+    width: 15px !important;
+}
+
+.u-width-30 {
+    width: 30px !important;
+}
+
+.u-inline-block {
+    display: inline-block;
+}
+
+.nav-scroll .nav-link-alleycat div {
+    visibility: visible;
+}
+
+.nav-link-alleycat {
+    display: inline-block;
+}
+
+.nav-link-alleycat div {
+    visibility: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.nav-link-alleycat:hover div {
+    visibility: visible;
+}
+
+.nav-link-alleycat0 div {
+    left: 3px;
+}
+
+.nav-link-alleycat1 div {
+    left: -7px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +58,10 @@ body {
   /*font-family: 'Rubik', sans-serif;*/
   font-family: 'Playfair Display', serif;
   overflow-x: hidden !important;
+}
+
+.svg-icon {
+    width: 40px;
 }
 
 .logo-cat {
