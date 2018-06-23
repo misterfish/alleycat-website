@@ -1,15 +1,3 @@
-/*-----------------------------------------------------------------------------------
-
-    Theme Name: Arco
-    Theme URI: http://
-    Description: The Multi-Purpose Onepage Template
-    Author: UI-ThemeZ
-    Author URI: http://themeforest.net/user/UI-ThemeZ
-    Version: 1.0
-
------------------------------------------------------------------------------------*/
-
-
 $(function() {
 
     "use strict";
@@ -29,25 +17,32 @@ $(function() {
       topOffset: -80            // offste (in px) for fixed top navigation
     });
 
+    var curScrollTop = 0
 
+    function hideMenu () {
+        var navbar = $(".navbar"),
+            logo = $(".navbar .logo> img")
+        navbar.removeClass("nav-scroll")
+        logo.attr('src', 'img/logo-light.png')
+    }
 
-    // navbar scrolling background
-    wind.on("scroll",function () {
+    function showMenu () {
+        var navbar = $(".navbar"),
+            logo = $(".navbar .logo> img")
+        navbar.addClass("nav-scroll");
+        logo.attr('src', 'img/logo-dark.png');
+    }
 
+    wind.on("scroll", function (e) {
         var bodyScroll = wind.scrollTop(),
             navbar = $(".navbar"),
-            logo = $(".navbar .logo> img");
+            logo = $(".navbar .logo> img"),
+            dir = bodyScroll < curScrollTop ? 'up' : 'down'
 
-        if(bodyScroll > 100){
+        curScrollTop = bodyScroll
 
-            navbar.addClass("nav-scroll");
-            logo.attr('src', 'img/logo-dark.png');
-
-        }else{
-
-            navbar.removeClass("nav-scroll");
-            logo.attr('src', 'img/logo-light.png');
-        }
+        if (bodyScroll > 100 && dir == 'up')   showMenu ()
+        if (bodyScroll < 100 || dir == 'down') hideMenu ()
     });
 
 
@@ -56,14 +51,12 @@ $(function() {
         $(".navbar-collapse").removeClass("show");
     });
 
-
-
     // progress bar
     wind.on('scroll', function () {
         $(".skill-progress .progres").each(function () {
-            var bottom_of_object = 
+            var bottom_of_object =
             $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = 
+            var bottom_of_window =
             $(window).scrollTop() + $(window).height();
             var myVal = $(this).attr('data-value');
             if(bottom_of_window > bottom_of_object) {
@@ -79,7 +72,7 @@ $(function() {
     // sections background image from data background
     var pageSection = $(".bg-img, section");
     pageSection.each(function(indx){
-        
+
         if ($(this).attr("data-background")){
             $(this).css("background-image", "url(" + $(this).data("background") + ")");
         }
@@ -236,7 +229,7 @@ $(window).on("load",function (){
 });
 
 
-// Slider 
+// Slider
 $(document).ready(function() {
 
     var owl = $('.header .owl-carousel');
