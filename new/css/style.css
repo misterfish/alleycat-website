@@ -1349,7 +1349,9 @@ span, a, a:hover {
   color: #2AAFC0;
 }
 .contact-info .info .item .cont {
-  margin-left: 60px;
+  margin-left: 25px;
+  margin-top: 4px;
+  display: inline-block;
 }
 .contact-info .info .item h6 {
   font-size: 14px;
